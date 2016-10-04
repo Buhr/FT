@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   repeat_aplha.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hbouchet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/22 15:24:07 by hbouchet          #+#    #+#             */
+/*   Updated: 2016/09/22 15:25:54 by hbouchet         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void    ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+int     main(int ac, char **av)
+{
+    int i;
+	int j;
+
+    i = 0;
+    if (ac == 2)
+    {
+        while (av[1][i])
+		{
+			j = (int)av[1][i];
+			while (j-- > 0)
+				ft_putchar(av[1][i]);
+            i++;
+		}
+        ft_putstr(av[1]);
+    }
+    ft_putchar('\n');
+    return (0);
+}
+
